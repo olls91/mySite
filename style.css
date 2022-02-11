@@ -4,16 +4,66 @@ body {
     box-sizing: border-box;
     height: 100vh;
     background-color: rgb(59, 57, 57);
+    /* font-family: 'Gideon Roman', cursive; */
+    /* font-family: 'Quintessential', cursive; */
 }
 
 header {
-    height: 25vh;
-    background-color: rgb(236, 236, 117);
+    height: 30vh;
 
 }
 
 header img {
+    float: left;
+    width: 12%;
+    margin: 10px;
+}
+
+div.intro {
+    float: left;
+    position: relative;
+    font-family: 'Gideon Roman', cursive;
+    color: rgb(16, 189, 189);
+    text-align: center;
+    margin: 10px 60px;
+    padding: 5px 15px;
+
+
+}
+
+div.intro::after {
+    content: "";
     position: absolute;
-    top: 5%;
-    width: 10%;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background-color: rgb(16, 189, 189);
+    animation: name .7s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    overflow: hidden
+}
+
+@keyframes name {
+    0% {
+        left: -100%;
+        width: 0;
+
+    }
+
+    100% {
+        left: -5%;
+        width: 110%;
+    }
+}
+
+
+h1.name {
+    font-size: 35px;
+    letter-spacing: 1px;
+
+}
+
+h2.pro {
+    font-size: 25px;
+    letter-spacing: 1px;
 }
