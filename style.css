@@ -22,11 +22,12 @@ header img {
 div.intro {
     float: left;
     position: relative;
+    height: 25vh;
     font-family: 'Gideon Roman', cursive;
     color: rgb(16, 189, 189);
     text-align: center;
-    margin: 10px 60px;
-    padding: 5px 15px;
+    margin: 5px 60px;
+    /* overflow: hidden; */
 
 
 }
@@ -40,7 +41,7 @@ div.intro::after {
     width: 0;
     background-color: rgb(16, 189, 189);
     animation: name .7s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-    overflow: hidden
+    z-index: -1;
 }
 
 @keyframes name {
@@ -63,7 +64,108 @@ h1.name {
 
 }
 
+h1.name::first-letter {
+    font-size: 45px;
+}
+
 h2.pro {
     font-size: 25px;
     letter-spacing: 1px;
+}
+
+nav {
+    position: absolute;
+    right: 3%;
+    top: 2%;
+    width: 40%;
+    display: flex;
+}
+
+div.panel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    font-family: 'Gideon Roman', cursive;
+    padding: 7px;
+}
+
+.menu {
+    flex-basis: 120px;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 3px 5px;
+    padding: 7px;
+    background-color: transparent;
+}
+
+div.menu a {
+    text-decoration: none;
+    color: rgb(16, 189, 189);
+    z-index: 1
+}
+
+div.aboutMe,
+div.port,
+div.con {
+    position: relative;
+    cursor: pointer;
+}
+
+
+div.port::before,
+div.con::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: rgb(16, 189, 189);
+    z-index: -1;
+}
+
+div.port::after,
+div.con::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    background-color: rgb(16, 189, 189);
+    z-index: -1;
+    transition: .2s;
+}
+
+div.port:hover::after,
+div.con:hover::after {
+    height: 100%;
+    color: rgb(59, 57, 57);
+}
+
+div.port:hover a,
+div.con:hover a {
+    color: rgb(59, 57, 57);
+}
+
+section.about {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.container {
+    width: 66%;
+    height: 80%;
+    background-color: rgba(10, 199, 199, 0.5);
+    border-radius: 20px;
+}
+
+.globe img {
+    position: absolute;
+    width: 13%;
+    color: white;
 }
